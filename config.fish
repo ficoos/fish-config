@@ -7,7 +7,7 @@ function fcd -d "fuzzy cd"
     if [ (count $argv) -gt 0 ]
         set dir $argv[1]
     end
-    cd (find "$dir" -type d -not -path '*/\.*'  2> /dev/null | fzf --reverse --height 10 --prompt 'cd ' -0 -1)
+    cd (find "$dir" -type d -not -path '*/\.*'  2> /dev/null | fzf --reverse --height 10 --prompt 'cd ' -0 -1; or echo -n '.')
 end
 
 function has_command

@@ -2,6 +2,14 @@ function hg_branch
     has_command hg; and hg branch ^ /dev/null | awk '{print $1}'
 end
 
+function fcd -d "fuzzy cd"
+    set -l dir '.'
+    if [ (count $argv) -gt 0 ]
+        set dir $argv[1]
+    end
+    cd (find "$dir" -type d -not -path '*/\.*'  2> /dev/null | fzf --reverse --height 10 --prompt 'cd ' -0 -1)
+end
+
 function has_command
     which $argv 2> /dev/null > /dev/null
 end

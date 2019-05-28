@@ -42,10 +42,6 @@ function vim
 	end
 end
 
-function viconf
-	 nvim ~/.config/nvim/init.vim
-end
-
 function pfzf
 	pass fzf $argv
 end

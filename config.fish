@@ -60,4 +60,4 @@ set --export PIP_INDEX_URL "https://devpi.gmpl/root/pypi/+simple/"
 set --export PIPENV_PYPI_MIRROR $PIP_INDEX_URL
 set --export PIP_TRUSTED_HOST "devpi.gmpl"
 
-set --export EDITOR nvim
+set --export EDITOR kak

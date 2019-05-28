@@ -48,7 +48,7 @@ end
 
 function tkak
 	set session_name (basename $PWD)
-	tmux new kak $argv
+	tmux new kak $argv \; rename-session "$session_name"
 end
 
 set --export PATH $PATH $HOME/.bin

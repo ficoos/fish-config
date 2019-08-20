@@ -2,6 +2,12 @@ function hg_branch
     has_command hg; and hg branch ^ /dev/null | awk '{print $1}'
 end
 
+function rcd -d "ranger powerd cd"
+    set -l temp (mktemp)
+    ranger "--choosedir=$temp"
+    cd (cat "$temp")
+end
+
 function fcd -d "fuzzy cd"
     set -l dir '.'
     if [ (count $argv) -gt 0 ]
